@@ -53,9 +53,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-body {
 
-}
 section {
 	margin-block: 6em;
 }
@@ -125,6 +123,7 @@ header {
 /* Gestion des fleches du carrousel */
 #banner .arrow {
 	position: absolute;
+	cursor: pointer;
 }
 #banner .arrow_left {
 	left: 10px;
@@ -145,7 +144,8 @@ header {
 	background-color: #ffffff00;
 	border: 3px solid #fff;
 	border-radius: 100%;
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	list-style-type: none;
 }
 .dot_selected {
 	background-color: #fff;
@@ -294,16 +294,4 @@ footer div {
 	#contact > article {
 		flex: 2;
 	}
-}
-
-
-
-/*************** MODIF CSS **************/
-
-.banner__fleche{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-	width: 100%;
 }
