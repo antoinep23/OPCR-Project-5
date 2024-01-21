@@ -295,3 +295,15 @@ footer div {
 		flex: 2;
 	}
 }
+
+
+
+/*************** MODIF CSS **************/
+
+.banner__fleche{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+}
