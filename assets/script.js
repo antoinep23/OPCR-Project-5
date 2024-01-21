@@ -17,11 +17,13 @@ const slides = [
 	}
 ]
 
+console.log(slides[0].tagLine)
 
 const flecheGauche = document.querySelector('.arrow_left')
 const flecheDroite = document.querySelector('.arrow_right')
 
 const bannerImage = document.querySelector('.banner-img')
+const bannerText = document.querySelector('.banner__text')
 
 let dots = Array.from(document.querySelectorAll('.dot'))
 
@@ -36,6 +38,7 @@ flecheGauche.addEventListener('click', () => {
 		dots[indexActif].classList.remove('dot_selected') 
 		indexActif = (indexActif - 1) % dots.length
 		dots[indexActif].classList.add('dot_selected')
+		bannerText.innerHTML = slides[indexActif].tagLine
 	}
 })
 
@@ -47,22 +50,9 @@ flecheDroite.addEventListener('click', () => {
 		dots[indexActif].classList.remove('dot_selected') 
 		indexActif = (indexActif + 1) % dots.length
 		dots[indexActif].classList.add('dot_selected')
+		bannerText.innerHTML = slides[indexActif].tagLine
 	}
 })
-
-/*
-function affiliateDot () {
-	if (position = 1) {
-		dot1.classList.add('dot_selected')
-	} else if (position = 2) {
-		dot2.classList.add('dot_selected')
-	} else if (position = 3) {
-		dot3.classList.add('dot_selected')
-	} else if (position = 4) {
-		dot4.classList.add('dot_selected')
-	}
-}
-*/
 
 
 
