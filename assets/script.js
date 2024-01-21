@@ -18,10 +18,14 @@ const slides = [
 ]
 
 
-let flecheGauche = document.querySelector('.arrow_left')
-let flecheDroite = document.querySelector('.arrow_right')
-let bannerImage = document.querySelector('.banner-img')
+const flecheGauche = document.querySelector('.arrow_left')
+const flecheDroite = document.querySelector('.arrow_right')
 
+const bannerImage = document.querySelector('.banner-img')
+
+let dots = Array.from(document.querySelectorAll('.dot'))
+
+let indexActif = 0
 let position = 1
 
 
@@ -29,7 +33,9 @@ flecheGauche.addEventListener('click', () => {
 	if (position > 1) {
 		position--
 		bannerImage.src = './assets/images/slideshow/slide'+ position + '.jpg'
-		console.log(position)
+		dots[indexActif].classList.remove('dot_selected') 
+		indexActif = (indexActif - 1) % dots.length
+		dots[indexActif].classList.add('dot_selected')
 	}
 })
 
@@ -38,9 +44,25 @@ flecheDroite.addEventListener('click', () => {
 	if (position < 4) {
 		position++
 		bannerImage.src = './assets/images/slideshow/slide'+ position + '.jpg'
-		console.log(position)
+		dots[indexActif].classList.remove('dot_selected') 
+		indexActif = (indexActif + 1) % dots.length
+		dots[indexActif].classList.add('dot_selected')
 	}
 })
+
+/*
+function affiliateDot () {
+	if (position = 1) {
+		dot1.classList.add('dot_selected')
+	} else if (position = 2) {
+		dot2.classList.add('dot_selected')
+	} else if (position = 3) {
+		dot3.classList.add('dot_selected')
+	} else if (position = 4) {
+		dot4.classList.add('dot_selected')
+	}
+}
+*/
 
 
 
