@@ -17,7 +17,6 @@ const slides = [
 	}
 ]
 
-console.log(slides[0].tagLine)
 
 const flecheGauche = document.querySelector('.arrow_left')
 const flecheDroite = document.querySelector('.arrow_right')
@@ -32,27 +31,32 @@ let position = 1
 
 
 flecheGauche.addEventListener('click', () => {
-	if (position > 1) {
-		position--
-		bannerImage.src = './assets/images/slideshow/slide'+ position + '.jpg'
-		dots[indexActif].classList.remove('dot_selected') 
-		indexActif = (indexActif - 1) % dots.length
-		dots[indexActif].classList.add('dot_selected')
-		bannerText.innerHTML = slides[indexActif].tagLine
-	}
+    dots[indexActif].classList.remove('dot_selected')
+
+    position--;
+    if (position < 1){
+        position = 4
+    }
+
+    indexActif = (indexActif - 1 + dots.length) % dots.length
+
+    bannerImage.src = './assets/images/slideshow/slide'+ position + '.jpg'
+    dots[indexActif].classList.add('dot_selected')
+    bannerText.innerHTML = slides[indexActif].tagLine
 })
 
 
 flecheDroite.addEventListener('click', () => {
-	if (position < 4) {
-		position++
-		bannerImage.src = './assets/images/slideshow/slide'+ position + '.jpg'
-		dots[indexActif].classList.remove('dot_selected') 
-		indexActif = (indexActif + 1) % dots.length
-		dots[indexActif].classList.add('dot_selected')
-		bannerText.innerHTML = slides[indexActif].tagLine
-	}
+    dots[indexActif].classList.remove('dot_selected')
+
+    position++
+    if (position > 4){
+        position = 1
+    }
+
+    indexActif = (indexActif + 1) % dots.length
+
+    bannerImage.src = './assets/images/slideshow/slide'+ position + '.jpg'
+    dots[indexActif].classList.add('dot_selected')
+    bannerText.innerHTML = slides[indexActif].tagLine
 })
-
-
-
